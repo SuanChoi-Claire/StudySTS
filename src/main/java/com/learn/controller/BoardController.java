@@ -40,7 +40,7 @@ public class BoardController {
 		result.put("totalPages", 10 );
 		
 		// result ={"totalpages":1,"content":[{"writer":"Writer name","id":2,"title":"title test ","content":"test content1 "},{"writer":"Writer name2","title":"title test2","content":"test content2"}]}
-		
+		// 철자 잘볼것.
 		
 		
 		return result;
