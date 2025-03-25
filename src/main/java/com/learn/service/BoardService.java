@@ -63,7 +63,7 @@ public class BoardService {
 				Path target = uploadPath.resolve(saveFileName);
 
 				try {
-					// target에 파일 업로드
+					// target에 파일 업로드 한다.
 					file.transferTo(target);
 				} catch (IllegalStateException e) {
 //	               e.printStackTrace(); //운영때는 하면 안됨
