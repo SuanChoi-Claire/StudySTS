@@ -1,5 +1,5 @@
 # main.py
-from fastapi import FastAPI
+from fastapi import FastAPI,form,UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -21,6 +21,9 @@ app.add_middleware(
 def getBoards():
     content=[{"writer":"Writer name","id":1,"title":"title test ","content":"test content1 "},{"writer":"Writer name2","id":2,"title":"title test2","content":"test content2"}]
     return {"content": content , "totalPages": 100}
+
+
+     
     
     
 # 1. GET 요청: 게시물 상세페이지 조회하기  API
@@ -36,6 +39,13 @@ def getBoardById(id: int):
 }
     
     return content
+    
+    #3. post요청 게시물 등록페이지  API
+    @app.post("/board")    
+ async def createBoard(writer: str = Form(...),title: str = Form(...),content: str = Form(...),file: UploadFile = File(...)):
+     fileBody = await file.read()
+     result = {"writer":writer,"Title":title, "file Size": len(fileBody) "file" : file.filename}
+     return result 
 
 
 
