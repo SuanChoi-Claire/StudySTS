@@ -54,6 +54,7 @@ public class BoardController {
 //
 //      content.add(map1);
 //      content.add(map2);
+//		DB 설정 다 돌아가는거 확인하면 그떄 마지막으로 지운다. 더미데이터  
 //
 		int totalPages = (int) Math.floor(content.size() / 10.0);
 		result.put("content", content);
